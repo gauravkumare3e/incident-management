@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite database
+incidents.db
+
+# OS files
+.DS_Store
+
+# Environment files (if any)
+.env
