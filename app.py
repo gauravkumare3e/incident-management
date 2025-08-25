@@ -133,6 +133,7 @@ def test_email_route():
     
     return jsonify({"message": "Incident updated"})
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
 
 
