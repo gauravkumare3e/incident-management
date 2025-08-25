@@ -87,6 +87,8 @@ app.config['MAIL_PASSWORD'] = "your-app-password"
 
 🌐 Live Links
 🚀 App Dashboard (local run) → http://127.0.0.1:5000
+👉 http://127.0.0.1:5000
+ will only work when your Flask app (or Docker container) is running, because that’s my local development server.
 🔑 Single Entry Point → Redirects to Login/Signup if not logged in
 
 👨‍💻 Author
