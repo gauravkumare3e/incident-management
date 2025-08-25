@@ -31,27 +31,35 @@ Access the live app (hosted on Render):
 venv\Scripts\activate
 
 2.Install dependencies
-
 pip install -r requirements.txt
 
 3.Set environment variables (for email and secret key)
 
 set SECRET_KEY=secretkey123
+
 set MAIL_SERVER=smtp.gmail.com
+
 set MAIL_PORT=587
+
 set MAIL_USE_TLS=True
+
 set MAIL_USERNAME=your-email@gmail.com
+
 set MAIL_PASSWORD=your-app-password
 
 4.Run the Flask app
+
 flask run
 or
 python app.py
+
 5.Open in browser
 http://127.0.0.1:5000
+
 ⚠️ Note: The local link only works while the app is running.
 
 🐳 Run Using Docker
+
 1.Build Docker image
 docker build -t incident-management .
 
@@ -62,6 +70,7 @@ docker run -p 5000:5000 incident-management
 http://127.0.0.1:5000
 
 📝 Usage
+
 1.Signup or login to access the app.
 2.Fill the form to create a new incident.
 3.View all incidents in the table.
