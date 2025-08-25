@@ -33,6 +33,8 @@ python app.py
 
 4.Open in browser
 http://127.0.0.1:5000
+⚠️ Note: This link only works if the app is running.
+Make sure you have started the Flask app or Docker container before opening the URL.
 
 🐳 Run Using Docker
 1.Build Docker image
@@ -58,7 +60,7 @@ http://127.0.0.1:5000
 📂 Folder Structure
 
 incident-management/
-├─ app.py             # Main Flask app
+├─ app.py             # Main Flask app                                      
 ├─ requirements.txt   # Python dependencies
 ├─ Dockerfile         # Docker configuration
 ├─ templates/
