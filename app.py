@@ -90,10 +90,12 @@ def logout():
 # Home page
 @app.route("/")
 def home():
-    if "username" not in session:
-        return redirect("/login")
-    incidents = Incident.query.all()
-    return render_template("index.html", incidents=incidents, username=session["username"])
+    if "username" in session:
+        incidents = Incident.query.all()
+        return render_template("index.html", incidents=incidents)
+    else:
+        return redirect(url_for("login"))  # send to login page
+
 
 # Create incident (UI)
 @app.route("/create-ui", methods=["POST"])
