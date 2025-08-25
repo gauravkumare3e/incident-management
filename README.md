@@ -31,6 +31,7 @@ Access the live app (hosted on Render):
 venv\Scripts\activate
 
 2.Install dependencies
+
 pip install -r requirements.txt
 
 3.Set environment variables (for email and secret key)
@@ -54,6 +55,7 @@ or
 python app.py
 
 5.Open in browser
+
 http://127.0.0.1:5000
 
 ⚠️ Note: The local link only works while the app is running.
@@ -72,30 +74,48 @@ http://127.0.0.1:5000
 📝 Usage
 
 1.Signup or login to access the app.
+
 2.Fill the form to create a new incident.
+
 3.View all incidents in the table.
+
 4.Assign an incident by typing a name and clicking Assign.
+
 5.Resolve an incident by clicking Resolve.
+
 6.Check your email for notifications of all actions.
 
 📂 Folder Structure
 
 incident-management/
+
 ├─ app.py             # Main Flask app
+
 ├─ requirements.txt   # Python dependencies
+
 ├─ Dockerfile         # Docker configuration
+
 ├─ templates/
 │  ├─ index.html      # Home page UI
+
 │  ├─ login.html      # Login page
+
 │  └─ signup.html     # Signup page
+
 ├─ .gitignore         # Git ignore file
+
 ├─ incidents.db       # SQLite database
+
 └─ venv/              # Virtual environment
 
 ⚠️ Notes
+
 ✉️ Email Setup: Add valid SMTP credentials in environment variables (MAIL_USERNAME and MAIL_PASSWORD). For Gmail, use an App Password.
+
 🗄️ Database: SQLite file (incidents.db) is created automatically.
+
 🐳 Docker: Optional. App works locally without Docker, but Docker makes it portable.
+
 🔑 Authentication: Signup, Login, Logout implemented. Homepage redirects to login if user not logged in.
 
 👨‍💻 Author
