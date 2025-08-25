@@ -1,3 +1,4 @@
 flask
-flask_sqlalchemy
-flask_mail
+Flask-Login
+flask-sqlalchemy
+flask-mail

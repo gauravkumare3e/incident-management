@@ -7,7 +7,22 @@
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
+<!-- Navbar with logout -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand">🚨 Incident Management</span>
+    <div class="d-flex">
+      {% if session.username %}
+        <span class="me-3">👤 Logged in as: {{ session.username }}</span>
+        <a href="/logout" class="btn btn-outline-danger btn-sm">Logout</a>
+      {% else %}
+        <a href="/login" class="btn btn-outline-primary btn-sm">Login</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-3">
   <h2 class="mb-4">Incident Management Portal</h2>
 
   <!-- Form to create new incident -->
@@ -27,7 +42,7 @@
   </div>
 
   <!-- Table of incidents -->
-    <h4>All Incidents</h4>
+  <h4>All Incidents</h4>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -36,7 +51,7 @@
         <th>Description</th>
         <th>Status</th>
         <th>Assignee</th>
-        <th>Actions</th>   <!-- new -->
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -63,4 +78,9 @@
       {% endfor %}
     </tbody>
   </table>
+</div>
+
+</body>
+</html>
+
 
