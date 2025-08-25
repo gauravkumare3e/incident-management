@@ -196,5 +196,9 @@ def test_email_route():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20a63133f8a7281e7a2be8d482f0a7d30567fc8c
 
 
