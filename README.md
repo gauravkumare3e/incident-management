@@ -58,7 +58,7 @@ python app.py
 
 http://127.0.0.1:5000
 
-⚠️ Note: The local link only works while the app is running.
+⚠️ Note: The local link only works while the app is running or container running.
 
 🐳 Run Using Docker
 
