@@ -1,9 +1,11 @@
 # 🛠️ Incident Management System
 
 A **web-based Incident Management System** built with **Flask**, **SQLite**, and **Bootstrap**.  
+
 It allows users to **create, assign, and resolve incidents**, and sends **email notifications** for all actions.
 
 ## ✨ Features
+
 - 🆕 Create incidents with a title and description  
 - 👤 Assign incidents to team members via the UI  
 - ✅ Mark incidents as resolved  
@@ -29,9 +31,11 @@ Access the live app (hosted on Render):
 venv\Scripts\activate
 
 2.Install dependencies
+
 pip install -r requirements.txt
 
 3.Set environment variables (for email and secret key)
+
 set SECRET_KEY=secretkey123
 set MAIL_SERVER=smtp.gmail.com
 set MAIL_PORT=587
