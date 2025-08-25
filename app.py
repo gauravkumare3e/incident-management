@@ -15,8 +15,8 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
-    MAIL_USERNAME='your-email@gmail.com',  # Replace with your email
-    MAIL_PASSWORD='your-app-password'      # Replace with your app password
+    MAIL_USERNAME='gauravk5732@gmail.com',  # Replace with your email
+    MAIL_PASSWORD='tijk jxze hfxi fxar'      # Replace with your app password
 )
 mail = Mail(app)
 
@@ -54,7 +54,7 @@ def signup():
         cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
         conn.close()
-        return redirect("/login")
+        return redirect("/")
 
     return render_template("signup.html")
 
@@ -83,19 +83,20 @@ def login():
 @app.route("/logout")
 def logout():
     session.pop("username", None)
-    return redirect("/login")
+    return redirect("/")
 
 # ✅ Incident Routes
 
-# Home page
+# Home page (single entry point)
 @app.route("/")
 def home():
     if "username" in session:
+        # ✅ User is logged in → show incident dashboard
         incidents = Incident.query.all()
-        return render_template("index.html", incidents=incidents)
+        return render_template("index.html", incidents=incidents, username=session["username"])
     else:
-        return redirect(url_for("login"))  # send to login page
-
+        # ❌ User not logged in → show login page
+        return render_template("login.html")
 
 # Create incident (UI)
 @app.route("/create-ui", methods=["POST"])
@@ -198,9 +199,5 @@ def test_email_route():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-<<<<<<< HEAD
-=======
-
->>>>>>> 20a63133f8a7281e7a2be8d482f0a7d30567fc8c
 
 
