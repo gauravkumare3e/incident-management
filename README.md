@@ -1,95 +1,89 @@
-🛠️ Incident Management System
+# 🛠️ Incident Management System
 
-A web-based Incident Management System built with Flask, SQLite, and Bootstrap that allows teams to create, assign, and resolve incidents with real-time email notifications.
+A **web-based Incident Management System** built with **Flask**, **SQLite**, and **Bootstrap**.  
+It allows users to **create, assign, and resolve incidents**, and sends **email notifications** for all actions.
 
-✅ Now includes User Authentication (Signup, Login, Logout) and a Single Dashboard Entry Point for a smooth experience.
+## ✨ Features
+- 🆕 Create incidents with a title and description  
+- 👤 Assign incidents to team members via the UI  
+- ✅ Mark incidents as resolved  
+- 📧 Email notifications for creation, assignment, and resolution  
+- 💻 Responsive UI using Bootstrap  
+- 🗄️ SQLite database for storing incidents  
+- 🐳 Docker support for easy deployment  
+- 🔐 User authentication: Signup, Login, Logout  
 
-✨ Features
-🔑 Authentication System (Signup, Login, Logout)
-🆕 Create Incidents with a title and description
-👤 Assign Incidents to team members via the UI
-✅ Mark Incidents as Resolved
-📧 Email Notifications for creation, assignment, and resolution
-💻 Responsive UI with Bootstrap 5
-🗄️ SQLite Database for storing users and incidents
-🐳 Docker Support for easy deployment
+---
 
-🚀 Getting Started
+## 🌐 Live Demo
 
-1️⃣ Clone Repository
-git clone https://github.com/gauravkumare3e/incident-management.git
-cd incident-management
+Access the live app (hosted on Render):  
 
-2️⃣ Run Locally (Without Docker)
-1.Create and activate virtual environment:
-python -m venv venv
-venv\Scripts\activate   # Windows
-source venv/bin/activate # Linux/Mac
+[**Incident Management Live App**](https://incident-management-yse8.onrender.com)  
 
-2.Install dependencies:
+> 🔑 Use the Signup/Login links on the homepage to start using the app.
+---
+## 🚀 Run Locally (Without Docker)
+
+1. **Activate virtual environment**  
+venv\Scripts\activate
+
+2.Install dependencies
 pip install -r requirements.txt
 
-3.Run Flask app:
+3.Set environment variables (for email and secret key)
+set SECRET_KEY=secretkey123
+set MAIL_SERVER=smtp.gmail.com
+set MAIL_PORT=587
+set MAIL_USE_TLS=True
+set MAIL_USERNAME=your-email@gmail.com
+set MAIL_PASSWORD=your-app-password
+
+4.Run the Flask app
 flask run
+or
+python app.py
+5.Open in browser
+http://127.0.0.1:5000
+⚠️ Note: The local link only works while the app is running.
 
-4.Open in browser:
-👉 http://127.0.0.1:5000
-
-3️⃣ Run with Docker
-1.Build image:
+🐳 Run Using Docker
+1.Build Docker image
 docker build -t incident-management .
 
-2.Run container:
+2.Run container
 docker run -p 5000:5000 incident-management
 
-3.Open in browser:
-👉 http://127.0.0.1:5000
+3.Open in browser
+http://127.0.0.1:5000
 
 📝 Usage
-1.Open app at: http://127.0.0.1:5000
-If not logged in → redirected to Login/Signup Page
-If logged in → redirected to Dashboard
-
-2.Authentication
-🔐 Signup with a new account
-🔑 Login to access the system
-🚪 Logout when done
-
-3.Incidents
-🆕 Create a new incident (Title + Description)
-👤 Assign to a user
-✅ Resolve when fixed
-📧 Email notifications sent on every action
+1.Signup or login to access the app.
+2.Fill the form to create a new incident.
+3.View all incidents in the table.
+4.Assign an incident by typing a name and clicking Assign.
+5.Resolve an incident by clicking Resolve.
+6.Check your email for notifications of all actions.
 
 📂 Folder Structure
+
 incident-management/
-├── app.py             # Main Flask app
-├── requirements.txt   # Python dependencies
-├── Dockerfile         # Docker config
-├── templates/         # HTML templates
-│   ├── index.html     # Dashboard
-│   ├── login.html     # Login page
-│   └── signup.html    # Signup page
-├── incidents.db       # SQLite database
-├── .gitignore         # Ignore unnecessary files
-└── venv/              # Virtual environment
+├─ app.py             # Main Flask app
+├─ requirements.txt   # Python dependencies
+├─ Dockerfile         # Docker configuration
+├─ templates/
+│  ├─ index.html      # Home page UI
+│  ├─ login.html      # Login page
+│  └─ signup.html     # Signup page
+├─ .gitignore         # Git ignore file
+├─ incidents.db       # SQLite database
+└─ venv/              # Virtual environment
 
 ⚠️ Notes
-
-✉️ Email Setup: Add your Gmail & App Password in app.py:
-app.config['MAIL_USERNAME'] = "your-email@gmail.com"
-app.config['MAIL_PASSWORD'] = "your-app-password"
-
-👉 For Gmail, use App Passwords
-.
-🗄️ Database: incidents.db is auto-created when the app runs.
-🐳 Docker: Optional but recommended for consistent deployments.
-
-🌐 Live Links
-🚀 App Dashboard (local run) → http://127.0.0.1:5000
-👉 http://127.0.0.1:5000
- will only work when your Flask app (or Docker container) is running, because that’s my local development server.
-🔑 Single Entry Point → Redirects to Login/Signup if not logged in
+✉️ Email Setup: Add valid SMTP credentials in environment variables (MAIL_USERNAME and MAIL_PASSWORD). For Gmail, use an App Password.
+🗄️ Database: SQLite file (incidents.db) is created automatically.
+🐳 Docker: Optional. App works locally without Docker, but Docker makes it portable.
+🔑 Authentication: Signup, Login, Logout implemented. Homepage redirects to login if user not logged in.
 
 👨‍💻 Author
 Gaurav Kumar
